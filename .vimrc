@@ -45,6 +45,7 @@ Plugin 'vim-scripts/Skittles-Dark'
 Plugin 'sickill/vim-monokai'
 Plugin 'hukl/Smyck-Color-Scheme'
 Plugin 'vim-scripts/wombat256.vim'
+Plugin 'Junza/Spink'
 
 " plugins
 Plugin 'mileszs/ack.vim'
@@ -54,6 +55,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-scripts/trailing-whitespace'
 Plugin 'vim-scripts/taglist.vim'
@@ -71,6 +73,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'groenewege/vim-less'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 filetype plugin indent on
@@ -93,6 +97,7 @@ hi link coffeeSpaceError NONE
 
 " syntax highlighting and auto-indentation
 syntax on
+filetype on
 filetype indent on
 filetype plugin on
 inoremap # X<C-H>#
@@ -107,8 +112,8 @@ set nofoldenable
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " expand tabs to 4 spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
 set expandtab
 
@@ -138,7 +143,7 @@ endif
 " font options
 set background=dark
 set t_Co=256
-colorscheme smyck
+colorscheme jellybeans
 
 " keep at least 5 lines below the cursor
 set scrolloff=5
@@ -221,3 +226,8 @@ function! ToggleMouse()
     endif
 endfunction
 nnoremap <leader>m :call ToggleMouse()<CR>
+
+" senthil
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+nmap clean :%s/\s\+$//
